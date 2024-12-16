@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            Магазинчик игрушек
+        {% endblock %}
+    </title>
+
+</head>
+<body>
+
+    <h1>
+        {% block pagename %}
+            Главная страница
+        {% endblock %}
+    </h1>
+
+    {% block menu %}
+        <p>
+            <a href="/"><h3>Главная</h3></a>
+        </p>
+        <p>
+            <a href="/shop/"><h3>Магазин</h3></a>
+        </p>
+        <p>
+            <a href="/cart/"><h3>Корзина</h3></a>
+        </p>
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+</html>

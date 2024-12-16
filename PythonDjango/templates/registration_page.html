@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <p><strong>{{ error }}</strong></p>
+        <input type="text" id="name" name="name" maxlength="30">
+        <label for="name">Введите имя:</label>
+        <br>
+        <input type="text" id="balance" name="balance" maxlength="10">
+        <label for="balance">Введите сумму баланса:</label>
+        <br>
+        <input type="text" id="age" name="age" maxlength="3">
+        <label for="age">Введите свой возраст:</label>
+        <br>
+        <button type="submit">Отправить</button>
+    </form>
+</body>
+</html>

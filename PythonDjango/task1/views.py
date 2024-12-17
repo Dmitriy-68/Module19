@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.paginator import Paginator
 from django.http import HttpResponse
 from .forms import ContactForm
 from .models import *
@@ -39,3 +40,11 @@ def sign_up(request):
     else:
         form = ContactForm()
     return render(request, 'registration_page.html', info)
+
+
+def news(request):
+    all_news = News.objects.all().order_by('-date')
+    paginator = Paginator(all_news, 3)
+    page_number = request.GET.get('page')
+    news = paginator.get_page(page_number)
+    return render(request, 'news.html', {'news': news})
